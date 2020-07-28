@@ -1,4 +1,5 @@
-Store
+# Store
+
 store(仓库)用于存储state（状态值）
 
 
@@ -47,7 +48,7 @@ export default {
 
     // 传字符串参数 'count' 等同于 `state => state.count`
     countAlias: 'count',
-
+    
     // 为了能够使用 `this` 获取局部状态，必须使用常规函数
     countPlusLocalState (state) {
       return state.count + this.localCount
