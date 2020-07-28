@@ -1,4 +1,4 @@
-mutation
+# mutation
 
 更改store中状态的唯一方法是提交mutation
 
