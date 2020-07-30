@@ -9,7 +9,7 @@
 
 - 如下代码示例，a和b组件作为兄弟组件在p组件引入
 
-```
+```vue
 // p.vue
 <template>
   <div>
@@ -33,14 +33,14 @@ export default {
 
 - 在bus.js 中创建一个空的Vue实例
 
-```
+```vue
 import Vue from 'vue'
 export default new Vue()
 ```
 
 - a和b组件想通过bus通讯，则需引入bus.js 。要传递参数的组件，通过$on监听自定义事件；要接受参数的组件，通过$emit 触发自定义事件，并处理传递的参数。
 
-```
+```vue
 // a.vue
 <template>
   <div>
@@ -61,7 +61,7 @@ export default {
 </script>
 ```
 
-```
+```vue
 // b.vue 
 <template>
 	<div>
