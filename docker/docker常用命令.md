@@ -10,3 +10,10 @@ title: docker常用命令
 2.iptables -t nat -A  DOCKER -p tcp --dport 8001 -j DNAT --to-destination {IPAddress}:8000
 ```
 2.
+
+
+docker ps -a
+--查看所有的docker任务
+
+docker restart 任务编号
+--重启docker任务

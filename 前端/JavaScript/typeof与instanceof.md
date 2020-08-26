@@ -1,4 +1,4 @@
-## typeof 与 instanceof之间的区别
+# typeof 与 instanceof之间的区别
 ```
 ES6规范中有2大类型，7中小类
 基本类型和引用类型两大类
@@ -13,7 +13,7 @@ ES6规范中有2大类型，7中小类
 ```
 2.instanceof是用来判断 A 是否为 B 的实例，表达式为：A instanceof B，如果 A 是 B 的实例，则返回 true,否则返回 false。 在这里需要特别注意的是：instanceof 检测的是原型。 
 例如：
-```
+```javascript
 [] instanceof Array; //true
 {} instanceof Object;//true
 new Date() instanceof Date;//true
@@ -28,7 +28,8 @@ new Person instanceof Object;//true
 instanceof 只能用来判断两个对象是否属于实例关系， 而不能判断一个对象实例具体属于哪种类型。
 之后增加了Array.isArray()方法判断这个值是不是数组的。
 ```
-总结
+**总结**
+
 ```
 1、typeof能够检测出了null之外的原型类型（String、Number、Boolean、Undefined），对于对象类型能判断出function、其他的都为Object
 
