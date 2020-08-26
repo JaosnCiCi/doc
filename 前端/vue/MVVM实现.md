@@ -26,7 +26,7 @@ MVVM模式就要将这些板块进行整合,实现模板和数据的绑定！
 ### Vue基础案例
 ---
 看段大众代码，接下来我们就基于这段代码搞一下MVVM的实现
-```
+```vue
 <div id="app">
     <!-- 双向数据绑定 靠的是表单 -->
     <input type="text" v-model="message.a">
@@ -54,7 +54,7 @@ MVVM模式就要将这些板块进行整合,实现模板和数据的绑定！
 ---
 
 直接用ES6来打造我们的MVVM
-```
+```javascript
 class MVVM{
     constructor(options){
         // 一上来 先把可用的东西挂载在实例上
@@ -73,7 +73,7 @@ class MVVM{
 MVVM中调用了Compile类来编译我们的页面,开始来实现模板编译
 
 先来个基础的架子
-```
+```javascript
 class Compile {
     constructor(el, vm) {
         // 看看传递的元素是不是DOM,不是DOM我就来获取一下~
@@ -102,7 +102,7 @@ class Compile {
 ```
 接下来一个个的方法来搞
 ### node2fragment
-```
+```javascript
 node2fragment(el) { // 需要将el中的内容全部放到内存中
     // 文档碎片 内存中的dom节点
     let fragment = document.createDocumentFragment();
@@ -115,7 +115,7 @@ node2fragment(el) { // 需要将el中的内容全部放到内存中
 }
 ```
 ### compile
-```
+```javascript
 compile(fragment) {
     // 需要递归 每次拿子元素
     let childNodes = fragment.childNodes;
@@ -136,7 +136,7 @@ compile(fragment) {
 ### 我们在弄出两个方法compileElement,compileText来专门处理对应的逻辑
 
 ### compileElement&compileText
-```
+```javascript
 /*辅助的方法*/
 // 是不是指令
 isDirective(name) {
@@ -172,7 +172,7 @@ compileText(node) {
 我们要实现一个专门用来配合Complie类的工具对象
 
 先只处理文本和输入框的情况
-```
+```javascript
 CompileUtil = {
   text(node, vm, expr) { // 文本处理
       let updateFn = this.updater['textUpdater'];
@@ -197,7 +197,7 @@ CompileUtil = {
 }
 ```
 实现text方法
-```
+```javascript
 text(node, vm, expr) { // 文本处理
     let updateFn = this.updater['textUpdater'];
     // 文本比较特殊 expr可能是'{{message.a}} {{b}}'
@@ -221,7 +221,7 @@ getVal(vm, expr) { // 获取实例上对应的数据
 
 ```
 实现Model方法
-```
+```javascript
 model(node, vm, expr) { // 输入框处理
     let updateFn = this.updater['modelUpdater'];
     // 这里应该加一个监控 数据变化了 应该调用这个watch的callback 
@@ -234,14 +234,14 @@ model(node, vm, expr) { // 输入框处理
 我们一直说Object.defineProperty有劫持功能咱就看看这个是怎样劫持的
 
 默认情况下定义属性给属性设置的操作是这样的
-```
+```javascript
 let school = {name:''}
 school.name = 'jw';  // 当我给属性设置时希望做一些操作
 console.log(school.name); // 当我获取属性时也希望对应有写操作
 
 ```
 这时候Object.defineProperty登场
-```
+```javascript
 let school = {name:''}
 let val;
 Object.defineProperty(school, 'name', {
@@ -263,7 +263,7 @@ console.log(school.name);
 这样我们可以在设置值和获取值时做我们想要做的操作了
 
 接下来我们就来写下一个类Observer
-```
+```javascript
 // 在MVVM加上Observe的逻辑
 if(this.$el){
     // 数据劫持 就是把对想的所有属性 改成get和set方法
@@ -313,7 +313,7 @@ class Observer{
 ### Watcher实现
 ---
 观察者的目的就是给需要变化的那个元素增加一个观察者，用新值和老值进行比对,如果数据变化就执行对应的方法
-```
+```javascript
 class Watcher{ // 因为要获取老值 所以需要 "数据" 和 "表达式"
     constructor(vm,expr,cb){
         this.vm = vm;

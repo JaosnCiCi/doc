@@ -1,4 +1,4 @@
-## **ES6、ES7、ES8、ES9、ES10新特性一览**
+# ES6、ES7、ES8、ES9、ES10新特性一览
 ```
 ES全称ECMAScript，ECMAScript是ECMA制定的标准化脚本语言。目前JavaScript使用的ECMAScript版本为ECMA-417。关于ECMA的最新资讯可以浏览 ECMA news查看。
 ```
