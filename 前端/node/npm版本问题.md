@@ -1,0 +1,1 @@
+npm install 的版本问题  用法举例  含义范围  备注^4.11.1Compatible with 4.11.14.11.1 <= version < 5.0.0（ 4.x.x 且 >=4.11.1 ）主版本号不变~4.11.1Reasonably close to 4.11.1 4.11.1 <= version < 4.12.0 （ 4.11.x 且 >=4.11.1 ）  主版本号和次版本号都不变           

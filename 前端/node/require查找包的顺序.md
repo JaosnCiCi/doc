@@ -1,10 +1,10 @@
-### 最近开始学习Nodejs， 对于其中module的引用大家应该比较熟悉，就是[js](http://lib.csdn.net/base/javascript)中的eRequire 关键字，如果没有module的路径，Node中会去怎样找到这个引用呢？例如：var m=require("xxxx"), 那么该XXXk查找顺序如下：![img](file:///C:/Users/Jason/AppData/Local/Temp/enhtmlclip/Image.png)
+### 最近开始学习Nodejs， 对于其中module的引用大家应该比较熟悉，就是js的require 关键字，如果没有module的路径，Node中会去怎样找到这个引用呢？例如：var m=require("xxxx"), 那么该XXXk查找顺序如下：![img](file:///C:/Users/Jason/AppData/Local/Temp/enhtmlclip/Image.png)
 
 
 
 
 
-### 尽管Node模块系统的本质简单直接，但还是有两点需要注意一下。第一，如果模块是目录，在模块目录中定义模块的文件必须被命名为index.js，除非你在这个目录下一个叫package.json的文件里特别指明。要指定一个取代index.js的文件，package.json文件里必须有一个用[JavaScript](http://lib.csdn.net/base/javascript)对象表示法（JSON）数据定义的对象，其中有一个名为main的键，指明模块目录内主文件的路径。图3-6中的流程图对这些规则做了汇总。
+### 尽管Node模块系统的本质简单直接，但还是有两点需要注意一下。第一，如果模块是目录，在模块目录中定义模块的文件必须被命名为index.js，除非你在这个目录下一个叫package.json的文件里特别指明。要指定一个取代index.js的文件，package.json文件里必须有一个用JavaScript对象表示法（JSON）数据定义的对象，其中有一个名为main的键，指明模块目录内主文件的路径。图3-6中的流程图对这些规则做了汇总。
 
 ![img](file:///C:/Users/Jason/AppData/Local/Temp/enhtmlclip/Image(1).png)
 
