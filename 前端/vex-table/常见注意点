@@ -4,3 +4,21 @@ input, textarea, select, $input, $select, $switch
 加$的表示vxe组件，不加的原生组件
 如clearable 只有使用$input时候在props中配置才有效
 ```
+
+```
+ <vxe-table-column field="sampleIdLab" align="center" width="200">
+            <template slot="header" slot-scope="scope">
+              <span>实验室样本号</span>
+              <el-button v-show="!showSimple" type="default" size="mini" @click="showSimple = true">简版</el-button>
+              <el-button v-show="showSimple" type="default" size="mini" @click="showSimple = false">标准版本</el-button>
+            </template>
+            <template slot-scope="scope">
+              <span>
+                {{
+                  scope.row.sampleIdLab | showSampleIdLims(showSimple)
+                }}
+              </span>
+            </template>
+          </vxe-table-column>
+      ps: header上的 slot-scope="scope"是必填的，否则el-button不会切换
+```
