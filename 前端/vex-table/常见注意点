@@ -1,0 +1,6 @@
+edit-render name 	
+```
+input, textarea, select, $input, $select, $switch
+加$的表示vxe组件，不加的原生组件
+如clearable 只有使用$input时候在props中配置才有效
+```
