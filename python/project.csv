@@ -1,0 +1,3 @@
+project_name,code,app_service,distribute_path
+新冠南京测试test_ncov,difei_helper,difei_helper,/home/geneseeq/ncov_test
+新冠南京测试test_ncov2,difei_helper,difei_helper,/home/geneseeq/test_ncov2

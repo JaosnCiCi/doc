@@ -15,7 +15,7 @@ destPath = os.path.join(parent_path, 'python', 'logjson')
 fileName = os.path.join(parent_path, 'trans.csv')
 dicArr = []
 divcGZ = []
-divcGZDic = {"DF0000076172": []}
+divcGZDic = {}
 
 
 def generateFile(entityString, timeString):
