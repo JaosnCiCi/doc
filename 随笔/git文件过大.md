@@ -15,4 +15,4 @@ git repack -A -d
 
 git gc --aggressive --prune=now
 
-git push --force
+git push --force --all
