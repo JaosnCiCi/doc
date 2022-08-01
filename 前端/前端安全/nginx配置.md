@@ -1,0 +1,1 @@
+add_header Content-Security-Policy "default-src 'self' localhost:8080 'unsafe-inline' 'unsafe-eval' blob: data: ;";
